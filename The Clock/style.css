@@ -78,7 +78,7 @@ body {
     bottom: 50%;
     transform-origin: bottom;
 }
-.secondes {
+.seconds {
     --rotation: 0;
     transform: rotate(calc(var(--rotation) *1deg));
 
