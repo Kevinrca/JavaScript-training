@@ -56,9 +56,10 @@ body {
     z-index: 9;
 
     border-radius: 4px 4px 0 0;
-
     bottom: 50%;
     transform-origin: bottom;
+
+    transition: all 0.05s ease-out;
 }
 .minutes {
     --rotation: 0;
@@ -74,6 +75,8 @@ body {
 
     bottom: 50%;
     transform-origin: bottom;
+
+    transition: all 0.05s ease-out;
 }
 .seconds {
     --rotation: 0;
@@ -87,4 +90,6 @@ body {
 
     bottom: 50%;
     transform-origin: bottom;
+
+    transition: all 0.05s ease-out;
 }
