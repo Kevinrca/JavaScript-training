@@ -20,9 +20,6 @@ body {
     align-items: center;
     justify-content: center;
     
-    margin-top: 50%;
-    margin-bottom: 50%;
-    
     background: url(clock.png);
     background-size: contain;
     width: 400px;
