@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(27, 41, 54);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Nunito", sans-serif;
+}
+
+.weatherConteneur {
+    width: 350px;
+    height: 400px;
+
+    background-color: rgb(229, 235, 241);
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.weatherIcone {
+    margin-bottom: 10px;
+    margin-top: -30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherTemp p {
+    font-size: 4em;
+    
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.weatherTemp span {
+    font-size: 0.4em;
+}
+
+.weatherDescription {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.weatherCity {
+    font-size: 1.2em;
+}
