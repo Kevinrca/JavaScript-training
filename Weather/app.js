@@ -6,8 +6,8 @@ const DOMweatherCity = document.querySelector(".weatherCity");
 
 const weather = {};
 
-let latitude = "47.0833";
-let longitude = "2.4";
+let latitude = "47.15";
+let longitude = "2.216667";
 
 getWeather(latitude, longitude);
 
