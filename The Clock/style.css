@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(25, 32, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+.clock {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin-top: 50%;
+    margin-bottom: 50%;
+    
+    background: url(clock.png);
+    background-size: contain;
+    width: 400px;
+    height: 400px;
+
+    box-shadow: 7px -10px 20px rgba(255, 255, 255, 0.05), 
+                -7px 10px 60px rgba(0, 0, 0, 0.4), 
+                inset 7px -10px 40px rgba(255, 255, 255, 0.04), 
+                inset -7px 10px 40px rgba(0, 0, 0, 0.3);
+
+    border-radius: 50%;
+}
+
+.center {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+    z-index: 10;
+}
+
+
+.hours {
+    --rotation: 0;
+    transform: rotate(calc(var(--rotation) *1deg));
+
+    position: absolute;
+    height: 60px;
+    width: 6px;
+    background-color: red;
+    z-index: 9;
+
+    border-radius: 4px 4px 0 0;
+
+    bottom: 50%;
+    transform-origin: bottom;
+}
+.minutes {
+    --rotation: 0;
+    transform: rotate(calc(var(--rotation) *1deg));
+
+    position: absolute;
+    height: 110px;
+    width: 4px;
+    background-color: rgb(177, 177, 177);
+    z-index: 8;
+
+    border-radius: 2px 2px 0 0;
+
+    bottom: 50%;
+    transform-origin: bottom;
+}
+.secondes {
+    --rotation: 0;
+    transform: rotate(calc(var(--rotation) *1deg));
+
+    position: absolute;
+    height: 160px;
+    width: 2px;
+    background-color: rgb(228, 228, 228);
+    z-index: 7;
+
+    bottom: 50%;
+    transform-origin: bottom;
+}
+
+    
+
+    
