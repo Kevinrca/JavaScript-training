@@ -4,29 +4,38 @@ const DOMweatherTemp = document.querySelector(".weatherTemp");
 const DOMweatherDescription = document.querySelector(".weatherDescription");
 const DOMweatherCity = document.querySelector(".weatherCity");
 
+
 const weather = {};
 
-main();
-
-//http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=fr&appid=646d82915c35c27e56f30d7478d9c087
-
-//http://ip-api.com/json
 
 
-
-
-
-async function main () {
-    const city = await fetch(`http://ip-api.com/json`)
-        .then(result => result.json())
-        .then(json => json.city);
+async function main (withIP = true) {
+    let city;
+    
+    if(withIP) {
+        city = await fetch(`http://ip-api.com/json`)
+            .then(result => result.json())
+            .then(json => json.city);
+    }
+    else {
+        city = document.querySelector(".customCity").value;
+    }
 
     const weatherData = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&lang=fr&appid=646d82915c35c27e56f30d7478d9c087`)
-        .then(result => result.json())
-        .then(data => data);
+                .then(result => result.json())
+                .then(data => data);
 
     displayWeather(weatherData);
+
 }
+
+
+function customCity() {
+    main(false);
+    document.querySelector(".customCity").value = "";
+}
+
+main();
 
 
 

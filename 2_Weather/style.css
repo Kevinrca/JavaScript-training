@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 
     font-family: "Nunito", sans-serif;
 }
@@ -83,4 +84,31 @@ header button:hover {
     background-color:rgba(255, 255, 255, 1);
     color: black;
     cursor: pointer;
+}
+
+
+
+.enterCity {
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.enterCity label {
+    font-size: 1.2em;
+    color: white;
+    font-weight: 600;
+    margin: 8px;
+}
+.enterCity input {
+    width: 300px;
+    padding: 8px 18px 8px 18px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
 }
