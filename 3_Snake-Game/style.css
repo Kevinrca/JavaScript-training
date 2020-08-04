@@ -29,6 +29,7 @@ body {
 
 .snake {
     background-color: rgb(47, 149, 245);
+    border: 1px white solid;
 }
 
 .apple {
