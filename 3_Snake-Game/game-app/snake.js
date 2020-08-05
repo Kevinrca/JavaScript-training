@@ -5,9 +5,7 @@ let NewSegments = 0;
 
 const snakeSpeed = 10;
 const snakeBody = [
-    {x: 15, y: 15},
-    {x: 16, y: 15},
-    {x: 17, y: 15}
+    {x: 15, y: 15}
 ];
 
 
@@ -53,10 +51,10 @@ function expandSnake(amount) {
 
 
 // return true if the position enter is at the same place as the snake
-function onSnake(position, {ignoreHead = false} = {}) {
+function onSnake(position, { ignoreHead = false } = {}) {
     return snakeBody.some((segment, index) => {
         
-        if(ignoreHead && index == 0) {
+        if(ignoreHead == true && index == 0) {
             return false;
         }
         
@@ -94,4 +92,4 @@ function snakeColision() {
 
 
 
-export { snakeSpeed, updateSnake, drawSnake, onSnake, expandSnake, getSnakeHead, outOfGrid, snakeColision};
+export { snakeSpeed, updateSnake, drawSnake, onSnake, expandSnake, getSnakeHead, outOfGrid, snakeColision };
