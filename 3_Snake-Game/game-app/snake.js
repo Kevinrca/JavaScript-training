@@ -47,8 +47,12 @@ function expandSnake(amount) {
 }
 
 
-function onSnake(position) {
-    return snakeBody.some(segment => {
+function onSnake(position, {ignoreHead = false} = {}) {
+    return snakeBody.some( (segment, index) => {
+        
+        if(ignoreHead && index === 0) {
+            return false;
+        }
         
         return equalPosition(position, segment);
     });
@@ -75,11 +79,11 @@ function outOfGrid(position) {
     }
 }
 
-/*
+
 function snakeColision() {
-    return onSnake(snakeBody[0]);
+    return onSnake(snakeBody[0], {ignoreHead: true});
 }
-*/
 
 
-export { snakeSpeed, updateSnake, drawSnake, onSnake, expandSnake, getSnakeHead, outOfGrid };
+
+export { snakeSpeed, updateSnake, drawSnake, onSnake, expandSnake, getSnakeHead, outOfGrid, snakeColision };

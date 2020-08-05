@@ -1,4 +1,4 @@
-import { snakeSpeed, updateSnake, drawSnake, getSnakeHead, outOfGrid } from "./snake.js";
+import { snakeSpeed, updateSnake, drawSnake, getSnakeHead, outOfGrid, snakeColision } from "./snake.js";
 import { updateApple, drawApple } from "./apple.js";
 
 
@@ -50,7 +50,7 @@ function draw() {
 
 
 function checkDeath() {
-    if(outOfGrid(getSnakeHead()) == true) {
+    if(outOfGrid(getSnakeHead()) || snakeColision()) {
         gameOver = true;
     }
 }
