@@ -3,7 +3,7 @@ import { getInputDirection } from "./input.js";
 
 
 
-const snakeSpeed = 1;
+const snakeSpeed = 20;
 const snakeBody = [
     {x: 15, y: 15},
     {x: 16, y: 15},

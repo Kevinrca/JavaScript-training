@@ -1,4 +1,5 @@
 import { snakeSpeed, updateSnake, drawSnake } from "./snake.js";
+import { updateApple, drawApple } from "./apple.js";
 
 
 const gameBoard = document.querySelector(".gameBoard");
@@ -29,10 +30,12 @@ window.requestAnimationFrame(main);
 
 function update() {
     updateSnake();
+    updateApple();
 }
 
 function draw() {
     gameBoard.innerHTML = "";
     drawSnake(gameBoard);
+    drawApple(gameBoard);
 }
 
