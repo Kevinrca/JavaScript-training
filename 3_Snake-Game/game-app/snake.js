@@ -37,6 +37,10 @@ function drawSnake(gameBoard) {
     });
 }
 
+function getSnakeHead() {
+    return snakeBody[0];
+}
+
 
 function expandSnake(amount) {
     NewSegments += amount;
@@ -45,6 +49,7 @@ function expandSnake(amount) {
 
 function onSnake(position) {
     return snakeBody.some(segment => {
+        
         return equalPosition(position, segment);
     });
 }
@@ -64,5 +69,17 @@ function addSegment() {
 }
 
 
+function outOfGrid(position) {
+    if(position.x < 1 || position.y < 1 || position.x > 30 || position.y > 30) {
+        return true;
+    }
+}
 
-export { snakeSpeed, updateSnake, drawSnake, onSnake, expandSnake };
+/*
+function snakeColision() {
+    return onSnake(snakeBody[0]);
+}
+*/
+
+
+export { snakeSpeed, updateSnake, drawSnake, onSnake, expandSnake, getSnakeHead, outOfGrid };

@@ -1,4 +1,4 @@
-import { snakeSpeed, updateSnake, drawSnake } from "./snake.js";
+import { snakeSpeed, updateSnake, drawSnake, getSnakeHead, outOfGrid } from "./snake.js";
 import { updateApple, drawApple } from "./apple.js";
 
 
@@ -6,10 +6,19 @@ const gameBoard = document.querySelector(".gameBoard");
 
 let lastRenderTime = 0;
 
+let gameOver = false;
+
 
 // Game loop
 function main (currentTime) {
     window.requestAnimationFrame(main);
+
+    checkDeath();
+
+    if(gameOver) {
+        alert("Game Over");
+        return;
+    }
 
     const timeSinceLastRender = (currentTime - lastRenderTime) / 1000;
     if(timeSinceLastRender < 1 / snakeSpeed) {
@@ -39,3 +48,9 @@ function draw() {
     drawApple(gameBoard);
 }
 
+
+function checkDeath() {
+    if(outOfGrid(getSnakeHead()) == true) {
+        gameOver = true;
+    }
+}
