@@ -1,10 +1,18 @@
 
-let apple = {x: 1, y: 1};
+import { onSnake, expandSnake } from "./snake.js";
+
+
+let apple = randomApplePosition();
+const expansionRate = 2;
 
 
 function updateApple() {
-    
+    if(onSnake(apple)) {
+        expandSnake(expansionRate);
+        apple = randomApplePosition();
+    }
 }
+
 
 
 function drawApple(gameBoard) {
@@ -16,6 +24,20 @@ function drawApple(gameBoard) {
 
     gameBoard.appendChild(appleElement);
 
+}
+
+
+function randomApplePosition() {
+    let newApplePosition;
+
+    while(newApplePosition == null || onSnake(newApplePosition)) {
+        newApplePosition = {
+            x: Math.floor(Math.random() * 30) + 1,
+            y: Math.floor(Math.random() * 30) + 1
+        }
+    }
+
+    return newApplePosition;
 }
 
 
