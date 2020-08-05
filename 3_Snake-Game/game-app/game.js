@@ -36,12 +36,14 @@ window.requestAnimationFrame(main);
 
 
 
-
+// update the snake and the apple on the game board
 function update() {
     updateSnake();
     updateApple();
 }
 
+
+// draw the snake and the apple on the game board
 function draw() {
     gameBoard.innerHTML = "";
     drawSnake(gameBoard);
@@ -49,8 +51,9 @@ function draw() {
 }
 
 
+// check id the snake touch the edge of the board or itself
 function checkDeath() {
-    if(outOfGrid(getSnakeHead()) || snakeColision()) {
+    if (outOfGrid(getSnakeHead()) || snakeColision()) {
         gameOver = true;
     }
 }
