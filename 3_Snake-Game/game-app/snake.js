@@ -3,10 +3,9 @@ import {  canvas, ctx, scale, apple  } from "./game.js";
 class Snake {
     constructor() {
         // head coordonates
-        this.x = 0;
-        this.y = 0;
+        this.x = scale * 5;
+        this.y = scale * 10;
 
-        // 
         this.xSpeed = scale * 1;
         this.ySpeed = scale * 0;
 
