@@ -4,62 +4,20 @@
 }
 
 body {
+    background-color: rgb(23, 32, 49);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    height: 100vh;
-    overflow: hidden;
-
-    background-color: rgb(25, 32, 43);
+    flex-direction: column;
 }
 
-.gameBoard {
-    position: relative;
-    height: 90vmin;
-    width: 90vmin;
-
-    display: grid;
-    grid-template-columns: repeat(30, 1fr);
-    grid-template-rows: repeat(30, 1fr);
-
-    background-color: rgb(32, 42, 58);
+.canvas {
+    background-color: rgb(38, 53, 80);
 }
-
-
-.snake {
-    background-color: rgb(47, 149, 245);
-    border: 1px white solid;
-}
-
-.apple {
-    background-color: rgb(231, 40, 26);
-}
-
-
-header {
-    position: absolute;
-    top: 30px;
-    left:30px;
-}
-header button {
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px rgba(255, 255, 255, 0.5) solid;
-    background-color:rgba(255, 255, 255, 0);
-
-    font-family: "Montserrat", sans-serif;
-    font-size: 0.8em;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    outline: none;
-
-    transition: all 0.2s ease;
-}
-
-header button:hover {
-    background-color:rgba(255, 255, 255, 1);
-    color: black;
-    cursor: pointer;
+.score {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2em;
+    color: white;
+    margin: 30px;
 }
