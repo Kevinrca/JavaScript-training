@@ -1,44 +1,24 @@
-
-import { onSnake, expandSnake } from "./snake.js";
-
-
-let apple = randomApplePosition();
-const expansionRate = 2;
+import {  canvas, ctx, scale, snake, rows, columns } from "./game.js";
 
 
-function updateApple() {
-    if(onSnake(apple)) {
-        expandSnake(expansionRate);
-        apple = randomApplePosition();
-    }
-}
-
-
-
-function drawApple(gameBoard) {
-    const appleElement = document.createElement('div');
-
-    appleElement.style.gridRowStart = apple.y;
-    appleElement.style.gridColumnStart = apple.x;
-    appleElement.classList.add("apple");
-
-    gameBoard.appendChild(appleElement);
-
-}
-
-
-function randomApplePosition() {
-    let newApplePosition;
-
-    while(newApplePosition == null || onSnake(newApplePosition)) {
-        newApplePosition = {
-            x: Math.floor(Math.random() * 30) + 1,
-            y: Math.floor(Math.random() * 30) + 1
-        }
+class Apple {
+    constructor() {
+        this.x;
+        this.y;
     }
 
-    return newApplePosition;
+
+    randomPosition = () => {
+        this.x = (Math.floor(Math.random() * rows - 1) + 1)* scale;
+        this.y = (Math.floor(Math.random() * columns - 1) + 1) * scale;
+    }
+
+    draw = () => {
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(this.x, this.y, scale, scale);
+    }
+
 }
 
-
-export { drawApple, updateApple };
+export { Apple };

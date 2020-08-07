@@ -1,59 +1,67 @@
-import { snakeSpeed, updateSnake, drawSnake, getSnakeHead, outOfGrid, snakeColision } from "./snake.js";
-import { updateApple, drawApple } from "./apple.js";
+import { Snake } from "./snake.js";
+import { Apple } from "./apple.js";
+
+const displayScore = document.querySelector(".score");
+
+// Setup the game board
+const canvas = document.querySelector(".canvas");
+const ctx = canvas.getContext("2d");
+const scale = 20;
+const rows = canvas.height / scale;
+const columns = canvas.width / scale;
+
+let snake;
+let apple;
 
 
-const gameBoard = document.querySelector(".gameBoard");
-
-let lastRenderTime = 0;
-
-let gameOver = false;
 
 
-// Game loop
-function main (currentTime) {
-    window.requestAnimationFrame(main);
 
-    checkDeath();
+// Run the game by updating and drawing the snake and the fruit
+function main() {
+    snake = new Snake();
+    apple = new Apple();
 
-    if(gameOver) {
-        alert("Game Over");
-        return;
-    }
+    snake.draw();
+    apple.randomPosition();
 
-    const timeSinceLastRender = (currentTime - lastRenderTime) / 1000;
-    if(timeSinceLastRender < 1 / snakeSpeed) {
-        return;
-    }
-    lastRenderTime = currentTime;
+    window.setInterval(() => {
+        displayScore.innerHTML = `score: ${snake.totalAppleEaten}`;
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        apple.draw();
 
-    update();
-    draw();
+        snake.update();
+        snake.draw();
 
+        if(snake.eatApple(apple)) {
+            apple.randomPosition();
+        }
+
+        if(snake.checkCollision()) {
+            alert(`Perdu\nVotre score: ${snake.totalAppleEaten}`);
+            snake.totalAppleEaten = 0;
+            snake.tail = [];
+        }
+
+
+    }, 80);
 }
-
-window.requestAnimationFrame(main);
-
+main();
 
 
 
-// update the snake and the apple on the game board
-function update() {
-    updateSnake();
-    updateApple();
-}
+// Change the direction when a key is down
+window.addEventListener("keydown", (event) => {
+    const direction = event.key.replace("Arrow", "");
+    
+    snake.changeDirection(direction);
+});
 
 
-// draw the snake and the apple on the game board
-function draw() {
-    gameBoard.innerHTML = "";
-    drawSnake(gameBoard);
-    drawApple(gameBoard);
-}
 
 
-// check id the snake touch the edge of the board or itself
-function checkDeath() {
-    if (outOfGrid(getSnakeHead()) || snakeColision()) {
-        gameOver = true;
-    }
-}
+
+
+export { canvas, ctx, scale, snake, apple, rows, columns };
