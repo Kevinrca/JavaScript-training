@@ -13,8 +13,7 @@ const citys = [
     {name: "Bourges"},
     {name: "Bourg"},
     {name: "Bordeaux"},
-    {name: "Losanne"},
-    {name: "Listerine"}
+    {name: "Losanne"}
 ];
 
 const suggestionsContainer = document.querySelector(".suggestions");

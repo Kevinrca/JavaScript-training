@@ -24,7 +24,7 @@ header {
     gap: 5%;
 
     background-color: rgb(42, 66, 85);
-    padding: 100px 15% 100px 15%;
+    padding: 100px 15% 200px 15%;
 
 }
 .library div {
@@ -50,4 +50,13 @@ header {
 .library div h3 {
     font-size: 1.2em;
     font-weight: 500;
+}
+
+
+
+footer {
+    height: 100px;
+    width: 100%;
+    margin-top: 100px;
+    bottom: 0;
 }
