@@ -1,5 +1,3 @@
-
-
 const citys = [
     {name: "Paris"}, 
     {name: "Lyon"}, 
@@ -23,8 +21,6 @@ const cityInput = document.getElementById("cityInput");
 cityInput.addEventListener("input", () => searchCity(cityInput.value));
 
 
-
-
 function searchCity(searchText) {
     suggestionsContainer.innerHTML = "";
 
@@ -36,7 +32,6 @@ function searchCity(searchText) {
     matches.forEach(element => {
         suggestionsContainer.innerHTML += `<div class="suggestion">${element.name}</div>`;
     });
-    
 
 
     let suggestions = document.querySelectorAll(".suggestion");
@@ -47,8 +42,6 @@ function searchCity(searchText) {
             suggestionsContainer.innerHTML = "";
         })
     })
-
-
 
 
     if(searchText.length === 0) {
