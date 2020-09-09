@@ -3,9 +3,45 @@
     margin: 0;
 }
 
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
 .slide {
+    position: relative;
     width: 200px;
-    height: 80px;
+    height: 50px;
+    margin-top: 300px;
+    padding: 20px;
     background-color: lightgray;
-    border-radius: 0px 20px 20px 0px ;
+    border-radius: 0px 20px 20px 0px;
+    cursor: pointer;
+
+    transition: all 0.3s ease-out;
+}
+.slide h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.slideCloseButton {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    cursor: pointer; 
+}
+
+.slideToggle {
+    transform: translateX(-200px);
+    transition: all 0.3s ease-out;
+}
+.slideToggle button {
+    display: none;
 }
