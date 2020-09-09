@@ -9,9 +9,3 @@ slideButton.addEventListener("click", (event) => {
     slide.className = "slide slideToggle";
     console.log(slide.className);
 });
-
-slide.addEventListener("click", (event) => {
-
-    slide.className = "slide";
-    console.log(slide.className);
-})
