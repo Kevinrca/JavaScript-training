@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.slide {
+    width: 200px;
+    height: 80px;
+    background-color: lightgray;
+    border-radius: 0px 20px 20px 0px ;
+}
